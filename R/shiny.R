@@ -87,9 +87,10 @@ encoder_logic = function() {
       }
     )
 
-    hash_text = shiny::renderText(encoded_txt())
-    output$hash_output = paste0("www.google.com/", as.character(hash_text()), "/somethingelse")
-
+    #text_use = shiny::renderText(encoded_txt())
+    output$hash_output = shiny::renderText(
+      paste0("www.google.com/",encoded_txt(), "/somethingelse")
+    )
 
     shiny::observeEvent(input$hash_copy, {
       clipr::write_clip(encoded_txt(), allow_non_interactive = TRUE)
