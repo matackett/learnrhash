@@ -87,7 +87,7 @@ encoder_logic = function() {
       }
     )
 
-    output$hash_output = shiny::renderText(encoded_txt())
+    output$hash_output = paste0("http://google.com", shiny::renderText(encoded_txt()))
 
 
     shiny::observeEvent(input$hash_copy, {
