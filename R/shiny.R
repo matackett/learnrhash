@@ -93,7 +93,7 @@ encoder_logic = function() {
     )
 
     shiny::observeEvent(input$hash_copy, {
-      clipr::write_clip(encoded_txt(), allow_non_interactive = TRUE)
+      clipr::write_clip(output$hash_output, allow_non_interactive = TRUE)
     })
   }, envir = p)
 }
