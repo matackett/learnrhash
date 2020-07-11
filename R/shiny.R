@@ -89,9 +89,10 @@ encoder_logic = function() {
 
     text_use = shiny::renderText(encoded_txt())
 
-    shiny::observeEvent(input$hash_copy, {
-      clipr::write_clip(paste0("https://docs.google.com/forms/d/e/1FAIpQLScNYkamugsvkZzyFA11sx9dLWF-5QBhahXjtAwqW8drp-44PA/viewform?usp=pp_url&entry.720277548=",output$hash_output), allow_non_interactive = TRUE)
-    })
+    tags$a(href=paste0("https://docs.google.com/forms/d/e/1FAIpQLScNYkamugsvkZzyFA11sx9dLWF-5QBhahXjtAwqW8drp-44PA/viewform?usp=pp_url&entry.720277548=",output$hash_output), "Click here to submit!")
+    #shiny::observeEvent(input$hash_copy, {
+      #clipr::write_clip(paste0("https://docs.google.com/forms/d/e/1FAIpQLScNYkamugsvkZzyFA11sx9dLWF-5QBhahXjtAwqW8drp-44PA/viewform?usp=pp_url&entry.720277548=",output$hash_output), allow_non_interactive = TRUE)
+   # })
   }, envir = p)
 }
 
